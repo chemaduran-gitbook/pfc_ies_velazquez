@@ -1,0 +1,25 @@
+# Configuración de Pages CMS (https://pagescms.org/docs/configuration/)
+#
+# Las páginas se editan como Markdown en bruto (sin campos ni frontmatter)
+# para conservar intacta la sintaxis de GitBook: {% hint %}, {% stepper %},
+# {% tabs %}, etc. El sitio se recompila solo al hacer commit:
+# https://doc.cheru.org
+
+media:
+  input: documentacion/.gitbook/assets
+  output: .gitbook/assets
+
+content:
+  - name: paginas
+    label: Páginas
+    type: collection
+    path: "documentacion"
+    subfolders: true
+    filename: nueva-pagina.md
+    view:
+      node: README.md
+
+  - name: indice
+    label: Índice (SUMMARY.md)
+    type: file
+    path: documentacion/SUMMARY.md
